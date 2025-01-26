@@ -13,10 +13,10 @@
                                 Customer</a>
                         </div>
                         <div class="col-md-8">
-                            <form action="">
+                            <form action="{{ route('customers.index') }}" method="GET">
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" placeholder="Search anything..."
-                                        aria-describedby="button-addon2">
+                                        aria-describedby="button-addon2" name="search" value="{{ request()->search }}">
                                     <button class="btn btn-outline-secondary" type="submit"
                                         id="button-addon2">Search</button>
                                 </div>
@@ -59,11 +59,13 @@
                                     <td>
                                         <a href="{{ route('customers.edit', $customer->id) }}" style="color: #2c2c2c;"
                                             class="ms-1 me-1"><i class="far fa-edit"></i></a>
-                                        <a href="{{ route('customers.show', $customer->id) }}" style="color: #2c2c2c;" class="ms-1 me-1"><i
-                                                class="far fa-eye"></i></a>
-                                        <a href="javascript:;" onclick="if(confirm('確定刪除此項?')) $('.form-{{ $customer->id }}').submit()" style="color: #2c2c2c;" class="ms-1 me-1"><i
-                                                class="fas fa-trash-alt"></i></a>
-                                        <form class="form-{{ $customer->id }}" action="{{ route('customers.destroy', $customer->id) }}" method="POST">
+                                        <a href="{{ route('customers.show', $customer->id) }}" style="color: #2c2c2c;"
+                                            class="ms-1 me-1"><i class="far fa-eye"></i></a>
+                                        <a href="javascript:;"
+                                            onclick="if(confirm('確定刪除此項?')) $('.form-{{ $customer->id }}').submit()"
+                                            style="color: #2c2c2c;" class="ms-1 me-1"><i class="fas fa-trash-alt"></i></a>
+                                        <form class="form-{{ $customer->id }}"
+                                            action="{{ route('customers.destroy', $customer->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                         </form>
