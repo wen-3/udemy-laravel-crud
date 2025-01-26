@@ -48,7 +48,7 @@ class CustomerController extends Controller
         $customer->about = $request->about;
         $customer->save();
 
-        return redirect()->route('customer.index');
+        return redirect()->route('customers.index');
     }
 
     /**
@@ -96,7 +96,7 @@ class CustomerController extends Controller
         $customer->about = $request->about;
         $customer->save();
 
-        return redirect()->route('customer.index');
+        return redirect()->route('customers.index');
     }
 
     /**
@@ -110,6 +110,6 @@ class CustomerController extends Controller
         }
         $customer->delete();
 
-        return redirect()->route('customer.index');
+        return redirect()->route('customers.index');
     }
 }

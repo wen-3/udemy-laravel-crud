@@ -3,7 +3,7 @@
 @section('content')
     <div class="row py-5 px-4">
         <div class="col-md-5 mx-auto"> <!-- Profile widget -->
-            <a href="{{ route('customer.index') }}" class="btn mb-3" style="background-color: #4643d3; color: white;"><i
+            <a href="{{ route('customers.index') }}" class="btn mb-3" style="background-color: #4643d3; color: white;"><i
                     class="fas fa-chevron-left"></i> Back</a>
             <div class="bg-white shadow rounded overflow-hidden">
                 <div class="px-4 pt-0 pb-4 cover">

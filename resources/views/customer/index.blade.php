@@ -8,7 +8,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-2">
-                            <a href="{{ route('customer.create') }}" class="btn"
+                            <a href="{{ route('customers.create') }}" class="btn"
                                 style="background-color: #4643d3; color: white;"><i class="fas fa-plus"></i> Create
                                 Customer</a>
                         </div>
@@ -57,13 +57,13 @@
                                     <td>{{ $customer->email }}</td>
                                     <td>{{ $customer->bank_account_number }}</td>
                                     <td>
-                                        <a href="{{ route('customer.edit', $customer->id) }}" style="color: #2c2c2c;"
+                                        <a href="{{ route('customers.edit', $customer->id) }}" style="color: #2c2c2c;"
                                             class="ms-1 me-1"><i class="far fa-edit"></i></a>
-                                        <a href="{{ route('customer.show', $customer->id) }}" style="color: #2c2c2c;" class="ms-1 me-1"><i
+                                        <a href="{{ route('customers.show', $customer->id) }}" style="color: #2c2c2c;" class="ms-1 me-1"><i
                                                 class="far fa-eye"></i></a>
                                         <a href="javascript:;" onclick="if(confirm('確定刪除此項?')) $('.form-{{ $customer->id }}').submit()" style="color: #2c2c2c;" class="ms-1 me-1"><i
                                                 class="fas fa-trash-alt"></i></a>
-                                        <form class="form-{{ $customer->id }}" action="{{ route('customer.destroy', $customer->id) }}" method="POST">
+                                        <form class="form-{{ $customer->id }}" action="{{ route('customers.destroy', $customer->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                         </form>

@@ -15,7 +15,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-2">
-                            <a href="{{ route('customer.index') }}" class="btn" style="background-color: #4643d3; color: white;"><i
+                            <a href="{{ route('customers.index') }}" class="btn" style="background-color: #4643d3; color: white;"><i
                                     class="fas fa-chevron-left"></i> Back</a>
                         </div>
 
@@ -23,7 +23,7 @@
 
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('customer.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('customers.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-12 mb-3">
