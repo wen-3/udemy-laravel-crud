@@ -23,13 +23,15 @@
                             </form>
                         </div>
                         <div class="col-md-2">
-
-                            <div class="input-group mb-3">
-                                <select class="form-select" name="" id="">
-                                    <option value="">Newest to Old</option>
-                                    <option value="">Old to Newest</option>
-                                </select>
-                            </div>
+                            <form class="form-order" action="{{ route('customers.index') }}" method="GET">
+                                <div class="input-group mb-3">
+                                    <select class="form-select" name="order" id=""
+                                        onchange="$('.form-order').submit()">
+                                        <option @selected(request()->order == 'desc') value="desc">Newest to Old</option>
+                                        <option @selected(request()->order == 'asc') value="asc">Old to Newest</option>
+                                    </select>
+                                </div>
+                            </form>
                         </div>
                     </div>
 
